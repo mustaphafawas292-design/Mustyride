@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Result — MustyRide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M12 34L20 18H28L23 27H34L36 34" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="28" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      MUSTY<span>RIDE</span>
+    </a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="wrap">
+    <div class="book-shell narrow" style="text-align:center;">
+      <div id="paymentLoading">
+        <div class="locked-icon" style="margin:0 auto 22px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h2>Confirming your payment...</h2>
+        <p style="color:var(--muted);margin-top:12px;">Just a moment, please don't close this tab.</p>
+      </div>
+
+      <div id="paymentSuccess" style="display:none;">
+        <div class="locked-icon" style="margin:0 auto 22px;background:rgba(46,158,103,0.12);color:var(--success);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2>Payment successful!</h2>
+        <p style="color:var(--muted);margin:12px 0 24px;">You're all set. Head back to your dashboard to continue.</p>
+        <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+      </div>
+
+      <div id="paymentFailed" style="display:none;">
+        <div class="locked-icon" style="margin:0 auto 22px;background:rgba(214,69,69,0.12);color:var(--danger);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M15 9L9 15M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h2>Payment didn't go through</h2>
+        <p id="paymentFailedMessage" style="color:var(--muted);margin:12px 0 24px;">Something went wrong with that payment.</p>
+        <a href="dashboard.html" class="btn btn-primary">Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 MustyRide.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=3"></script>
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const txRef = params.get('tx_ref');
+    const transactionId = params.get('transaction_id');
+    const status = params.get('status');
+
+    const loadingEl = document.getElementById('paymentLoading');
+    const successEl = document.getElementById('paymentSuccess');
+    const failedEl = document.getElementById('paymentFailed');
+
+    function showFailed(message) {
+      loadingEl.style.display = 'none';
+      failedEl.style.display = 'block';
+      if (message) document.getElementById('paymentFailedMessage').textContent = message;
+    }
+
+    if (!txRef || status === 'cancelled') {
+      showFailed(status === 'cancelled' ? 'You cancelled the payment.' : 'Missing payment reference.');
+      return;
+    }
+
+    const token = sessionStorage.getItem('mustyride_token');
+    if (!token) {
+      showFailed('Your session expired - please log in again and check your wallet balance.');
+      return;
+    }
+
+    fetch(`/api/payments/verify/${encodeURIComponent(txRef)}?transaction_id=${encodeURIComponent(transactionId || '')}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        loadingEl.style.display = 'none';
+        if (data.success && data.data?.payment?.status === 'successful') {
+          successEl.style.display = 'block';
+        } else {
+          showFailed(data.message || 'We could not confirm this payment.');
+        }
+      })
+      .catch(() => showFailed('Could not reach the server to confirm this payment.'));
+  })();
+</script>
+</body>
+</html>

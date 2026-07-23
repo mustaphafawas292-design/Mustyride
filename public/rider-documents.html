@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rider Verification — MustyRide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M12 34L20 18H28L23 27H34L36 34" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="28" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      MUSTY<span>RIDE</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="rider-register.html">Become a Rider</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="register.html" class="btn btn-primary">Customer Register</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-lite">
+  <div class="wrap">
+    <span class="eyebrow">One more step</span>
+    <h1>Verify your details</h1>
+    <p>Drop your information below - an admin reviews it before you can go online and start earning.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="book-shell narrow" id="riderLockedCard" style="display:none;">
+      <div class="locked-card">
+        <div class="locked-icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h2>Log in as a rider first</h2>
+        <p>You need a rider account to submit verification documents.</p>
+        <div class="hero-actions">
+          <a href="rider-register.html" class="btn btn-primary">Go to Rider Sign up / Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-shell narrow" id="riderDocsShell" style="display:none;">
+      <div class="book-head">
+        <div>
+          <span class="eyebrow" id="statusEyebrow">Status</span>
+          <h2 style="margin-top:12px;" id="statusHeading">Checking your status...</h2>
+        </div>
+      </div>
+
+      <p id="statusMessage" style="color:var(--muted);font-size:14.5px;margin-bottom:24px;"></p>
+
+      <form id="riderDocsForm" class="form-grid" novalidate>
+        <div class="field full">
+          <label for="homeAddress">Home address</label>
+          <input type="text" id="homeAddress" placeholder="Where you live in Osun State" required>
+        </div>
+
+        <div class="field" id="plateNumberField">
+          <label for="plateNumber">Bike plate number</label>
+          <input type="text" id="plateNumber" placeholder="e.g. OSN 123 AB" required>
+        </div>
+
+        <div class="field">
+          <label for="meansOfIdType">Means of ID</label>
+          <select id="meansOfIdType" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="nin">NIN Slip</option>
+            <option value="voters_card">Voter's Card</option>
+            <option value="lasrra">State Resident Card</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>A clear photo of your face</label>
+          <div class="camera-capture" data-field="passportPhoto" data-facing="user">
+            <video class="camera-video" autoplay playsinline muted></video>
+            <img class="camera-preview" alt="Captured photo">
+            <canvas style="display:none;"></canvas>
+            <div class="camera-controls">
+              <button type="button" class="btn btn-ghost camera-start-btn">Open Camera</button>
+              <button type="button" class="btn btn-primary camera-capture-btn" style="display:none;">Capture</button>
+              <button type="button" class="btn btn-ghost camera-retake-btn" style="display:none;">Retake</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field full" id="bikePhotoField">
+          <label>A photo of your bike</label>
+          <div class="camera-capture" data-field="bikePhoto" data-facing="environment">
+            <video class="camera-video" autoplay playsinline muted></video>
+            <img class="camera-preview" alt="Captured photo">
+            <canvas style="display:none;"></canvas>
+            <div class="camera-controls">
+              <button type="button" class="btn btn-ghost camera-start-btn">Open Camera</button>
+              <button type="button" class="btn btn-primary camera-capture-btn" style="display:none;">Capture</button>
+              <button type="button" class="btn btn-ghost camera-retake-btn" style="display:none;">Retake</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>Photo of your means of ID</label>
+          <div class="camera-capture" data-field="meansOfId" data-facing="environment">
+            <video class="camera-video" autoplay playsinline muted></video>
+            <img class="camera-preview" alt="Captured photo">
+            <canvas style="display:none;"></canvas>
+            <div class="camera-controls">
+              <button type="button" class="btn btn-ghost camera-start-btn">Open Camera</button>
+              <button type="button" class="btn btn-primary camera-capture-btn" style="display:none;">Capture</button>
+              <button type="button" class="btn btn-ghost camera-retake-btn" style="display:none;">Retake</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field full" id="docsError" style="display:none;color:var(--danger);font-size:13.5px;"></div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary" id="docsSubmitBtn">
+            Submit for review
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="submit-note">Your details go straight to an admin for review.</span>
+        </div>
+      </form>
+
+      <div class="confirm" id="docsSuccess">
+        <div class="confirm-top">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Submitted for review</h3>
+        </div>
+        <p style="color:var(--muted);font-size:14.5px;">An admin will review your documents. You'll be able to go online as soon as you're approved.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 MustyRide. Built for Osun, moved by okada.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Waitlist — MustyRide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M12 34L20 18H28L23 27H34L36 34" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="28" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      MUSTY<span>RIDE</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="rider-register.html">Become a Rider</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="register.html" class="btn btn-primary" id="navAuthBtn">Register</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap" style="max-width:640px;margin:0 auto;text-align:center;">
+    <span class="eyebrow">Coming soon to your area</span>
+    <h1 style="margin-top:14px;">Be first in line<br>when we <em>launch</em>.</h1>
+    <p class="lead" style="margin:18px auto 0;max-width:520px;">MustyRide is expanding across Osun State. Join the waitlist and we'll text you the moment delivery and rides go live near you - no spam, just one message when it matters.</p>
+
+    <div id="waitlistCountBadge" style="display:inline-flex;align-items:center;gap:8px;margin-top:26px;padding:10px 18px;background:rgba(225,90,43,0.1);border:1px solid rgba(225,90,43,0.25);border-radius:999px;font-size:14px;font-weight:700;color:var(--orange);">
+      <span id="waitlistCountText">Loading...</span>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap" style="max-width:520px;margin:0 auto;">
+    <div class="book-shell narrow" style="padding:30px;">
+      <form id="waitlistForm" class="form-grid" novalidate>
+        <div class="field full">
+          <label for="wlName">Your name</label>
+          <input type="text" id="wlName" placeholder="e.g. Adeola Fashina" required>
+        </div>
+
+        <div class="field full">
+          <label for="wlPhone">Phone number</label>
+          <input type="tel" id="wlPhone" placeholder="080..." pattern="[0-9]{10,11}" required>
+        </div>
+
+        <div class="field full">
+          <label for="wlEmail">Email (optional)</label>
+          <input type="email" id="wlEmail" placeholder="you@example.com">
+        </div>
+
+        <div class="field full">
+          <label for="wlTown">Which town are you in?</label>
+          <input type="text" id="wlTown" placeholder="e.g. Osogbo, Ile-Ife, Ilesa...">
+        </div>
+
+        <div class="field full">
+          <label>What are you interested in?</label>
+          <div class="type-choice">
+            <label class="type-card">
+              <input type="radio" name="wlInterest" value="customer" checked>
+              <div class="tc-top"><b>Sending packages / riding</b></div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="wlInterest" value="rider">
+              <div class="tc-top"><b>Becoming a rider</b></div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="wlInterest" value="both">
+              <div class="tc-top"><b>Both</b></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="field full" id="waitlistError" style="display:none;color:var(--danger);font-size:13.5px;"></div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">
+            Join the Waitlist
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="confirm" id="waitlistConfirm">
+        <div class="confirm-top">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 id="waitlistConfirmHeading">You're on the list!</h3>
+        </div>
+        <p style="color:var(--muted);font-size:14.5px;" id="waitlistConfirmMessage">We'll text you the moment MustyRide opens near you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 MustyRide. Built for Osun, moved by okada.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=3"></script>
+<script>
+  (function () {
+    const countText = document.getElementById('waitlistCountText');
+    const form = document.getElementById('waitlistForm');
+    const confirmPanel = document.getElementById('waitlistConfirm');
+
+    async function refreshCount() {
+      try {
+        const res = await fetch('/api/waitlist/count');
+        const data = await res.json();
+        const count = data.data?.count || 0;
+        countText.textContent = count > 0 ? `${count.toLocaleString()} people already joined` : 'Be the first to join';
+      } catch (err) {
+        countText.textContent = 'Join now';
+      }
+    }
+    refreshCount();
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const errEl = document.getElementById('waitlistError');
+      errEl.style.display = 'none';
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      const fullName = document.getElementById('wlName').value.trim();
+      const phone = document.getElementById('wlPhone').value.trim();
+      const email = document.getElementById('wlEmail').value.trim();
+      const town = document.getElementById('wlTown').value.trim();
+      const interestType = form.querySelector('input[name="wlInterest"]:checked').value;
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, phone, email: email || undefined, town: town || undefined, interestType, source: 'landing_page' }),
+        });
+        const data = await res.json();
+        if (!res.ok || data.success === false) throw new Error(data.message || 'Something went wrong.');
+
+        document.getElementById('waitlistConfirmHeading').textContent = data.data.alreadyJoined ? "You're already on the list!" : "You're on the list!";
+        document.getElementById('waitlistConfirmMessage').textContent = data.message;
+
+        form.style.display = 'none';
+        confirmPanel.classList.add('show');
+        confirmPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        refreshCount();
+      } catch (err) {
+        errEl.textContent = err.message;
+        errEl.style.display = 'block';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

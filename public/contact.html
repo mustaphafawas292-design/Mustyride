@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Complaints — MustyRide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M12 34L20 18H28L23 27H34L36 34" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="28" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      MUSTY<span>RIDE</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="rider-register.html">Become a Rider</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="rider-register.html" class="btn btn-ghost">Become a Rider</a>
+      <a href="register.html" class="btn btn-primary" id="navAuthBtn">Register</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-lite">
+  <div class="wrap">
+    <span class="eyebrow">We're here to help</span>
+    <h1>Contact &amp; complaints</h1>
+    <p>Late delivery, damaged package, a rider issue, or something else — tell us and we'll sort it out.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h4>Phone / WhatsApp</h4>
+        <a href="tel:+2340000000000">+234 000 000 0000</a>
+        <span class="hint">Mon – Sat, 7am – 9pm</span>
+      </div>
+      <div class="contact-card">
+        <h4>Email</h4>
+        <a href="mailto:mustyridebusiness@gmail.com">mustyridebusiness@gmail.com</a>
+        <span class="hint">We reply within 24 hours</span>
+      </div>
+      <div class="contact-card">
+        <h4>Office</h4>
+        <p>Ogo-Oluwa, Osogbo, Osun State</p>
+        <span class="hint">Visits by appointment</span>
+      </div>
+    </div>
+
+    <div class="book-shell narrow">
+      <div class="book-head">
+        <div>
+          <span class="eyebrow">Log a complaint</span>
+          <h2 style="margin-top:12px;">Tell us what went wrong</h2>
+        </div>
+        <p>Include your tracking ID if you have one — it helps us find your order fast.</p>
+      </div>
+
+      <form id="complaintForm" class="form-grid" novalidate>
+        <div class="field">
+          <label for="cplName">Your name</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/><path d="M5 20C5 16.5 8 14 12 14C16 14 19 16.5 19 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="cplName" placeholder="Full name" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cplPhone">Your phone number</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 3H9L11 8L8.5 9.5C9.4 11.6 11 13.6 13.5 15.5L15 13L20 15V18C20 19.1 19.1 20 18 20C10.3 20 4 13.7 4 6C4 4.9 4.9 3 6 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <input type="tel" id="cplPhone" placeholder="080..." required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cplTrackId">Tracking ID (optional)</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="cplTrackId" placeholder="e.g. OSR-7F3K2">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cplCategory">Complaint category</label>
+          <select id="cplCategory" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Late delivery</option>
+            <option>Damaged or missing package</option>
+            <option>Rider conduct</option>
+            <option>Payment / fare issue</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="cplMessage">Tell us what happened</label>
+          <textarea id="cplMessage" placeholder="Give us as much detail as you can..." required></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">
+            Submit complaint
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="submit-note">We aim to respond within 24 hours.</span>
+        </div>
+      </form>
+
+      <div class="confirm" id="complaintConfirm">
+        <div class="confirm-top">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Complaint received</h3>
+        </div>
+        <div class="confirm-id">REFERENCE: <span id="complaintRef"></span></div>
+        <p style="color:var(--muted);font-size:14.5px;margin-bottom:20px;">Our support team will get back to you within 24 hours. Keep your reference number handy.</p>
+        <button class="btn btn-ghost" id="resetComplaint">Submit another complaint</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MustyRide</h4>
+        <p style="max-width:280px;">Bike logistics built for Osun State — same-day delivery, market runs, food and business errands, moved by trusted okada riders.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Coverage</h4>
+        <div class="coverage-tags">
+          <span>Osogbo</span><span>Ile-Ife</span><span>Ilesa</span><span>Ede</span>
+          <span>Ikirun</span><span>Iwo</span><span>Gbongan</span><span>Ejigbo</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="rider-register.html">Become a Rider</a>
+        <a href="register.html">Register / Log in</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MustyRide. Built for Osun, moved by okada.</span>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20L5.4 15.8C4.5 14.3 4 12.6 4 10.9C4 5.9 8.4 2 13.5 2C18.5 2 22 5.9 22 10.9C22 15.9 17.7 19.8 12.6 19.8C11 19.8 9.5 19.4 8.2 18.7L4 20Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"><path d="M21 5.5C20.3 5.9 19.5 6.1 18.7 6.2C19.5 5.7 20.2 4.9 20.5 3.9C19.7 4.4 18.8 4.7 17.9 4.9C17.1 4.1 16 3.6 14.8 3.6C12.5 3.6 10.6 5.5 10.6 7.8C10.6 8.1 10.6 8.4 10.7 8.7C7.2 8.5 4.1 6.9 2 4.3C1.7 4.9 1.5 5.6 1.5 6.4C1.5 7.7 2.2 8.9 3.2 9.6C2.6 9.6 2 9.4 1.5 9.1V9.2C1.5 11.2 3 12.9 4.9 13.3C4.6 13.4 4.2 13.4 3.8 13.4C3.5 13.4 3.3 13.4 3 13.3C3.6 15 5.1 16.2 6.9 16.3C5.5 17.4 3.7 18.1 1.8 18.1C1.5 18.1 1.2 18.1 0.9 18C2.7 19.2 4.9 19.9 7.2 19.9C14.8 19.9 19 13.6 19 8.1C19 7.9 19 7.7 19 7.6C19.8 7 20.5 6.3 21 5.5Z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=3"></script>
+</body>
+</html>

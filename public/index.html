@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MustyRide — Bike Logistics, Osun State</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="7" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M12 34L20 18H28L23 27H34L36 34" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="28" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      MUSTY<span>RIDE</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="rider-register.html">Become a Rider</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="rider-register.html" class="btn btn-ghost">Become a Rider</a>
+      <a href="register.html" class="btn btn-primary" id="navAuthBtn">Register</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Osun State · Bike Dispatch</span>
+      <h1>Anywhere in Osun,<br>on <em>two wheels</em>, today.</h1>
+      <p class="lead">MustyRide connects you to verified couriers across Osogbo, Ile-Ife, Ilesa, Ede and beyond — for parcels, market runs, food, and business errands. Tell us where, we'll get it there.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Book a delivery
+        </a>
+        <a href="services.html" class="btn btn-ghost">See services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>15–45</b><span>Min avg pickup</span></div>
+        <div class="stat"><b>10+</b><span>Towns covered</span></div>
+        <div class="stat"><b>4</b><span>Ways to move it</span></div>
+      </div>
+    </div>
+
+    <div class="route-card">
+      <svg viewBox="0 0 460 340" width="100%" style="overflow:visible;">
+        <path id="routePath" d="M40,270 C130,300 100,150 200,130 C300,110 280,40 420,40"
+              fill="none" style="stroke:rgba(255,255,255,0.14)" stroke-width="3" stroke-dasharray="1 14" stroke-linecap="round"/>
+        <g transform="translate(40,270)">
+          <circle r="9" style="fill:var(--gold)"/>
+          <circle r="3.4" style="fill:var(--ink)"/>
+        </g>
+        <text x="18" y="300" style="fill:var(--muted);font-family:'Manrope';font-size:11px;font-weight:700;">PICKUP</text>
+        <g transform="translate(420,40)">
+          <circle r="9" style="fill:var(--orange)"/>
+          <circle r="3.4" style="fill:var(--ink)"/>
+        </g>
+        <text x="378" y="26" style="fill:var(--muted);font-family:'Manrope';font-size:11px;font-weight:700;">DROP-OFF</text>
+        <g id="bikeIcon">
+          <circle cx="-9" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+          <circle cx="11" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M-9 7L-3 -4H5L0 3H12L15 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto"
+            path="M40,270 C130,300 100,150 200,130 C300,110 280,40 420,40" />
+        </g>
+      </svg>
+      <div class="route-caption">
+        <span>Ogo-Oluwa, Osogbo</span>
+        <b>~6.4 km</b>
+        <span>Iwo Road, Ile-Ife</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we move</span>
+      <h2>One rider network, five jobs</h2>
+      <p>Whatever needs to move across Osun State — including you — a rider is closer than you think.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12H21M21 12L15 6M21 12L15 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Same-Day Delivery</h3>
+        <p>Documents, gadgets, gift items — picked up and dropped off across Osogbo, Ife, Ilesa or Ede before the day is out.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 9H20L18 20H6L4 9Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8 9L9 4H15L16 9" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Market Pickup</h3>
+        <p>Send a list to Oja Oba, Sabo or Odo-Ori market — your rider shops, pays, and brings it straight to your door.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 11C4 8 7 5 12 5C17 5 20 8 20 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M3 11H21V13C21 17 17 20 12 20C7 20 3 17 3 13V11Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Food Delivery</h3>
+        <p>Hot amala from your favourite bukka or a UNIOSUN campus order — served fast, still warm.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="2.2"/><path d="M9 8V6C9 5 9.6 4 11 4H13C14.4 4 15 5 15 6V8" stroke="currentColor" stroke-width="2.2"/></svg>
+        </div>
+        <h3>Business Delivery</h3>
+        <p>Recurring runs for shops, pharmacies and offices — invoices, stock transfers and customer orders on schedule.</p>
+      </div>
+
+    </div>
+    <div class="section-cta">
+      <a href="services.html" class="btn btn-ghost">View all services &amp; pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="section steps">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps, one rider</h2>
+    </div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Tell us where</h3>
+        <p>Register in seconds, then drop your pickup point, destination, and who's on the other end.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>A rider is matched</h3>
+        <p>The nearest available okada rider picks up your package — or picks up you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>It lands, on time</h3>
+        <p>Track it live, and get confirmation the moment it's delivered or you've arrived.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-banner">
+      <span class="eyebrow">Ready when you are</span>
+      <h2 style="margin-top:12px;">Got something to move today?</h2>
+      <p>Create a free account and book your first delivery or ride in under a minute.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-primary">Create an account</a>
+        <a href="dashboard.html" class="btn btn-ghost">Track an existing order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MustyRide</h4>
+        <p style="max-width:280px;">Bike logistics built for Osun State — same-day delivery, market runs, food and business errands, moved by trusted okada riders.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Coverage</h4>
+        <div class="coverage-tags">
+          <span>Osogbo</span><span>Ile-Ife</span><span>Ilesa</span><span>Ede</span>
+          <span>Ikirun</span><span>Iwo</span><span>Gbongan</span><span>Ejigbo</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <a href="services.html">Services</a>
+        <a href="rider-register.html">Become a Rider</a>
+        <a href="register.html">Register / Log in</a>
+        <a href="contact.html">Contact &amp; complaints</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MustyRide. Built for Osun, moved by okada.</span>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20L5.4 15.8C4.5 14.3 4 12.6 4 10.9C4 5.9 8.4 2 13.5 2C18.5 2 22 5.9 22 10.9C22 15.9 17.7 19.8 12.6 19.8C11 19.8 9.5 19.4 8.2 18.7L4 20Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"><path d="M21 5.5C20.3 5.9 19.5 6.1 18.7 6.2C19.5 5.7 20.2 4.9 20.5 3.9C19.7 4.4 18.8 4.7 17.9 4.9C17.1 4.1 16 3.6 14.8 3.6C12.5 3.6 10.6 5.5 10.6 7.8C10.6 8.1 10.6 8.4 10.7 8.7C7.2 8.5 4.1 6.9 2 4.3C1.7 4.9 1.5 5.6 1.5 6.4C1.5 7.7 2.2 8.9 3.2 9.6C2.6 9.6 2 9.4 1.5 9.1V9.2C1.5 11.2 3 12.9 4.9 13.3C4.6 13.4 4.2 13.4 3.8 13.4C3.5 13.4 3.3 13.4 3 13.3C3.6 15 5.1 16.2 6.9 16.3C5.5 17.4 3.7 18.1 1.8 18.1C1.5 18.1 1.2 18.1 0.9 18C2.7 19.2 4.9 19.9 7.2 19.9C14.8 19.9 19 13.6 19 8.1C19 7.9 19 7.7 19 7.6C19.8 7 20.5 6.3 21 5.5Z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js?v=3"></script>
+</body>
+</html>
